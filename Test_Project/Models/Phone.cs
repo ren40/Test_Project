@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace Test_Project.Models
 {
-    public class Book
+    public class Phone
     {
-        // ID книги 
+        // ID телефона 
         public int Id { get; set; }
-        // Название книги
+        // Модель телефона
         public string Name { get; set; }
-        // Автор книги 
-        public string Author { get; set; }
+        // Производитель телефона
+        public string Company { get; set; }
         // Цена 
         public int Price { get; set; }
 
