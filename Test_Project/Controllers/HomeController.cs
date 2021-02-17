@@ -23,6 +23,22 @@ namespace Test_Project.Controllers
             return View(db.Phones.ToList());
         }
 
-    
+        [HttpGet]
+        public IActionResult Buy(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.PhoneId = id;
+            return View();
+        }
+        [HttpPost]
+        public string Buy(Order order)
+        {
+            db.Orders.Add(order);
+            db.SaveChanges();
+            return "Спасибо, " + order.Person + ", за покупку!";
+        }
     }
 }
